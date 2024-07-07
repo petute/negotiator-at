@@ -10,11 +10,12 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
-model Post {
-    id        Int      @id @default(autoincrement())
-    name      String
+model Game{
+    id String @id @default(uuid())
+    group Int
+    pricesAlba Int[]
+    pricesBatia Int[]
+    profitsAlba Int[]
+    profitsBatia Int[]
     createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
-
-    @@index([name])
 }
